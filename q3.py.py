@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
 
-speech, fs = sf.read(r'D:\IIT MANDI\Sem 1\CS571 Programming Practicum\LAB 9\Ques3\should.wav')
+speech, fs = sf.read('sound.wav')
 t = np.array(np.linspace(0, len(speech), num = len(speech))) / fs
 
 print("Sampling rate of signal is {0} Hz".format(fs))
@@ -31,7 +31,7 @@ def enframe(x,winsize,hoplength,fs,wintype = 'rect'):
     for i in range(numOfFrames):
         startIndx = i*step
         endIndx = (i+1)*step
-        frames.append( x[startIndx:endIndx]*window )     # Appending frames to the frames
+        frames.append( x[startIndx:endIndx]*window )    
     return frames
 
 
